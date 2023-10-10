@@ -1,26 +1,23 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './Navbar'
+import Overview from './Overview'
+import { Route, Routes } from 'react-router-dom'
+import Analytics from './Analytics'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <div>Navbar</div>
-      <div className='app-calorie-container'>
-        <h1>Calories</h1>
-        <h2>1000</h2>
-      </div>
-      <div>
-        <div>Detail</div>
-        <div>Detail</div>
-        <div>Detail</div>
-        <div>Detail</div>
-      </div>
-      <div>
-        Logs
-      </div>
+    <>
+    <Navbar />
+    <div className='app-main-container'>
+    <Routes>
+      <Route path='/' element={<Overview />} />
+      <Route path='/analytics' element={<Analytics />} />
+    </Routes>
     </div>
+    
+    </>
   )
 }
 
