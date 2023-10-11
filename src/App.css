@@ -2,3 +2,22 @@
   margin-left: 16px;
   margin-right: 16px;
 }
+
+.circle-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: #ff5898;
+  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 9999;
+}

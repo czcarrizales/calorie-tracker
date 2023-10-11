@@ -1,20 +1,12 @@
-.overview-main-container {
-    
-}
-
 .app-calorie-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 10px solid #2BBC66;
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
     text-align: center;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+
   }
   
   .app-overview-details-container {
@@ -31,15 +23,6 @@
     box-shadow: 0px 4px 4px 0px rgb(0, 0, 0, 25%);
   }
   
-  .app-log-container {
-    border: 1px solid rgb(0, 0, 0, 25%);
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem 1rem;
+  .overview-food-log-container {
     margin-top: 40px;
-  }
-  
-  .app-log-picture {
-    border: 1px solid red;
   }
