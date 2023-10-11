@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import './FoodLog.css'
 
-const FoodLog = ({ name, calories, protein, fat, carbs }) => {
-    const [foodLogName, setFoodLogName] = useState(name)
-    const [foodLogCalories, setFoodLogCalories] = useState(calories)
-    const [foodLogProtein, setFoodLogProtein] = useState(protein)
-    const [foodLogFat, setFoodLogFat] = useState(fat)
-    const [foodLogCarbs, setFoodLogCarbs] = useState(carbs)
+interface FoodLogProps {
+    name: string;
+    calories: number;
+    protein: number;
+    fat: number;
+    carbs: number;
+  }
+
+const FoodLog: React.FC<FoodLogProps> = ({ name, calories, protein, fat, carbs }) => {
+    const [foodLogName] = useState(name)
+    const [foodLogCalories] = useState(calories)
+    const [foodLogProtein] = useState(protein)
+    const [foodLogFat] = useState(fat)
+    const [foodLogCarbs] = useState(carbs)
     const [showMore, setShowMore] = useState(false)
 
     const handleShowMore = () => {

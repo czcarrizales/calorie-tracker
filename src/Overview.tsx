@@ -2,12 +2,11 @@ import FoodLog from './FoodLog'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css';
 import './Overview.css'
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Overview = () => {
 
-    const user = useSelector((state) => state.user)
+    const user = useSelector((state: any) => state.user)
 
     const styles = buildStyles({
         strokeLinecap: 'round',
@@ -44,7 +43,7 @@ const Overview = () => {
             <div className='overview-food-log-container'>
                 <h3>Food Log</h3>
                 {
-                    user.foodLog.map((food) => {
+                    user.foodLog.map((food: any) => {
                         return (
                             <FoodLog name={food.name} calories={food.calories} protein={food.protein} fat={food.fat} carbs={food.carbs} />
                         )

@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import './Modal.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { addToFoodLog, updateCurrentCalories, updateCurrentCarbs, updateCurrentFat, updateCurrentProtein } from './slices/userSlice'
 
-const Modal = ({setShowModal}) => {
+interface ModalProps {
+    setShowModal: any;
+}
+
+const Modal: React.FC<ModalProps> = ({setShowModal}) => {
 
     const dispatch = useDispatch()
-    const user = useSelector((state) => state.user)
     const [foodName, setFoodName] = useState('')
     const [foodCalories, setFoodCalories] = useState(0)
     const [foodProtein, setFoodProtein] = useState(0)

@@ -4,17 +4,17 @@ import { useSelector } from "react-redux";
 
 const Analytics = () => {
 
-    const user = useSelector((state) => state.user)
+    const user = useSelector((state: any) => state.user)
 
     const data = {
-        labels: user.foodLog.map((item) => item.name),
+        labels: user.foodLog.map((item: any) => item.name),
         datasets: [
           {
             label: 'Calories',
             backgroundColor: 'rgba(75, 192, 192, 0.6)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
-            data: user.foodLog.map((item) => item.calories), // Your data goes here
+            data: user.foodLog.map((item: any) => item.calories), // Your data goes here
           },
         ],
       };
