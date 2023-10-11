@@ -1,4 +1,7 @@
 .app-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 16px;
   margin-right: 16px;
 }
