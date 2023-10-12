@@ -10,3 +10,10 @@
     text-decoration: none;
     color: black;
 }
+
+.navbar-button {
+    background-color: white;
+    border-radius: 15px;
+    padding: .5rem 1.5rem;
+    font-weight: 500;
+}
