@@ -6,3 +6,7 @@
   box-sizing: border-box;
   font-family: Inter;
 }
+
+body {
+  background-color: hsl(144, 63%, 99%);;
+}
