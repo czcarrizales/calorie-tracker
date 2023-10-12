@@ -41,15 +41,15 @@ const FoodLog: React.FC<FoodLogProps> = ({ name, calories, protein, fat, carbs }
                 <div className='food-log-more-details'>
                     <div className='food-log-element'>
                         <p className='food-log-label'>Protein</p>
-                        <p>{foodLogProtein}</p>
+                        <p>{foodLogProtein}g</p>
                     </div>
                     <div className='food-log-element'>
                         <p className='food-log-label'>Fats</p>
-                        <p>{foodLogFat}</p>
+                        <p>{foodLogFat}g</p>
                     </div>
                     <div className='food-log-element'>
                         <p className='food-log-label'>Carbs</p>
-                        <p>{foodLogCarbs}</p>
+                        <p>{foodLogCarbs}g</p>
                     </div>
                 </div>
             }
