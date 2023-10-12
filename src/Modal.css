@@ -19,7 +19,10 @@
     padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 100%;
+}
+
+.modal-content h2 {
+  margin-bottom: 8px;
 }
 
 .nutrition-info-container {
@@ -37,6 +40,7 @@
   border-radius: 15px;
   border: 1px solid rgb(0, 0, 0, 25%);
   padding: 1rem;
+  margin-top: 4px;
 }
 
 .add-food-button {
@@ -45,7 +49,7 @@
   color: white;
   border: none;
   border-radius: 15px;
-  padding: .6rem;
+  padding: .6rem 1.2rem;
 }
 
 .add-food-button:hover {
@@ -55,14 +59,19 @@
 
 .cancel-food-button {
   margin-top: 16px;
+  margin-left: 8px;
   background-color: white;
   border-radius: 15px;
   border: 1px solid #2bbc66;
   color: #2bbc66;
-  padding: .6rem;
+  padding: .6rem 1.2rem;
 }
 
 .cancel-food-button:hover {
   cursor: pointer;
   background-color: hsl(0, 0%, 95%);
+}
+
+.optional-tag {
+  color: rgb(0, 0, 0, 60%);
 }

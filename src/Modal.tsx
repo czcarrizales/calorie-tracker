@@ -20,7 +20,8 @@ const Modal: React.FC<ModalProps> = ({ setShowModal }) => {
         setShowModal(false)
     }
 
-    const handleAddButton = () => {
+    const handleAddButton = (e: any) => {
+        e.preventDefault()
         setShowModal(false)
         dispatch(updateCurrentProtein(foodProtein))
         dispatch(updateCurrentCalories(foodCalories))
@@ -39,38 +40,43 @@ const Modal: React.FC<ModalProps> = ({ setShowModal }) => {
         <div className='modal-container'>
             <div className="modal-content">
                 <h2>Add Food</h2>
-                <label htmlFor="name">
-                    Name
-                </label>
-                <input className='nutrition-info-input' type="text" onChange={(e) => setFoodName(e.target.value)} required />
-                <div className='nutrition-info-container'>
-                    <div className='nutrition-info-details'>
-                        <label htmlFor="calories">
-                            Calories
-                        </label>
-                        <input className='nutrition-info-input' type="number" onChange={(e) => setFoodCalories(parseInt(e.target.value))} required />
-                    </div>
+                <form onSubmit={handleAddButton}>
                     <div className="nutrition-info-details">
-                        <label htmlFor="protein">
-                            Protein
+                        <label htmlFor="name">
+                            Name
                         </label>
-                        <input className='nutrition-info-input' type="number" onChange={(e) => setFoodProtein(parseInt(e.target.value))} />
+                        <input className='nutrition-info-input' type="text" placeholder='Milk' onChange={(e) => setFoodName(e.target.value)} required />
                     </div>
-                    <div className="nutrition-info-details">
-                        <label htmlFor="fats">
-                            Fats
-                        </label>
-                        <input className='nutrition-info-input' type="number" onChange={(e) => setFoodFat(parseInt(e.target.value))} />
+                    <div className='nutrition-info-container'>
+                        <div className='nutrition-info-details'>
+                            <label htmlFor="calories">
+                                Calories
+                            </label>
+                            <input className='nutrition-info-input' type="number" placeholder='130' onChange={(e) => setFoodCalories(parseInt(e.target.value))} required />
+                        </div>
+                        <div className="nutrition-info-details">
+                            <label htmlFor="protein">
+                                Protein <span className='optional-tag'>(optional)</span>
+                            </label>
+                            <input className='nutrition-info-input' type="number" placeholder='8g' onChange={(e) => setFoodProtein(parseInt(e.target.value))} />
+                        </div>
+                        <div className="nutrition-info-details">
+                            <label htmlFor="fats">
+                                Fats <span className='optional-tag'>(optional)</span>
+                            </label>
+                            <input className='nutrition-info-input' type="number" placeholder='5g' onChange={(e) => setFoodFat(parseInt(e.target.value))} />
+                        </div>
+                        <div className="nutrition-info-details">
+                            <label htmlFor="carbs">
+                                Carbs <span className='optional-tag'>(optional)</span>
+                            </label>
+                            <input className='nutrition-info-input' type="number" placeholder='12g' onChange={(e) => setFoodCarbs(parseInt(e.target.value))} />
+                        </div>
                     </div>
-                    <div className="nutrition-info-details">
-                        <label htmlFor="carbs">
-                            Carbs
-                        </label>
-                        <input className='nutrition-info-input' type="number" onChange={(e) => setFoodCarbs(parseInt(e.target.value))} />
-                    </div>
-                </div>
-                <button className='add-food-button' onClick={handleAddButton}>Add</button>
-                <button className='cancel-food-button' onClick={handleCancelButton}>Cancel</button>
+                    <button className='add-food-button' type='submit'>Add</button>
+                    <button className='cancel-food-button' onClick={handleCancelButton}>Cancel</button>
+                </form>
+
 
             </div>
         </div>
