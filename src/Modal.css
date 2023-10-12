@@ -16,7 +16,43 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 20px;
+    padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.nutrition-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-info-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.nutrition-info-input {
+  border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0, 25%);
+  padding: 1rem;
+}
+
+.add-food-button {
+  margin-top: 16px;
+  background-color: #2BBC66;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: .6rem;
+}
+
+.cancel-food-button {
+  margin-top: 16px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #2bbc66;
+  color: #2bbc66;
+  padding: .6rem;
 }
