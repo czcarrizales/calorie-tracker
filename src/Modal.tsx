@@ -52,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({ setShowModal }) => {
                             <label htmlFor="calories">
                                 Calories
                             </label>
-                            <input className='nutrition-info-input' type="number" placeholder='130' onChange={(e) => setFoodCalories(parseInt(e.target.value))} required />
+                            <input className='nutrition-info-input' type="number" placeholder='130 cal' onChange={(e) => setFoodCalories(parseInt(e.target.value))} required />
                         </div>
                         <div className="nutrition-info-details">
                             <label htmlFor="protein">
@@ -73,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({ setShowModal }) => {
                             <input className='nutrition-info-input' type="number" placeholder='12g' onChange={(e) => setFoodCarbs(parseInt(e.target.value))} />
                         </div>
                     </div>
-                    <button className='add-food-button' type='submit'>Add</button>
+                    <button className='add-food-button' type='submit'>Add Food</button>
                     <button className='cancel-food-button' onClick={handleCancelButton}>Cancel</button>
                 </form>
 
