@@ -28,4 +28,10 @@
 
   .food-log-show-details-button {
     flex: 1;
+    border-radius: 15px;
+    border: 1px solid black;
+  }
+
+  .food-log-show-details-button:hover {
+    cursor: pointer;
   }
