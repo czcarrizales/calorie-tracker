@@ -48,6 +48,11 @@
   padding: .6rem;
 }
 
+.add-food-button:hover {
+  cursor: pointer;
+  background-color: hwb(144 17% 21%);
+}
+
 .cancel-food-button {
   margin-top: 16px;
   background-color: white;
@@ -55,4 +60,9 @@
   border: 1px solid #2bbc66;
   color: #2bbc66;
   padding: .6rem;
+}
+
+.cancel-food-button:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 95%);
 }

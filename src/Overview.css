@@ -35,6 +35,11 @@
     color: white;
     font-weight: 500;
   }
+
+  .overview-food-log-add:hover {
+    cursor: pointer;
+    background-color: hwb(144 17% 21%);
+  }
   
   .overview-food-log-container {
     margin-top: 40px;
