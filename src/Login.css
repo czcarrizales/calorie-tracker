@@ -1,0 +1,64 @@
+.login-container {
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 25%);
+    padding: 4rem;
+    border-radius: 15px;
+}
+
+.login-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.login-input {
+    border: 1px solid rgb(0, 0, 0, 15%);
+    border-radius: 15px;
+    padding: .6rem 0;
+    padding-left: 1rem;
+}
+
+.login-submit-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: .6rem;
+    border-radius: 16px;
+    border: none;
+    background-color: #2BBC66;
+    text-align: center;
+}
+
+.login-hr {
+    margin-top: 32px;
+}
+
+.social-login-container {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-login-button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+}
+
+.social-login-button-google {
+    background-color: red;
+}
+
+.social-login-button-facebook {
+    background-color: lightblue;
+}
+
+.social-login-button-linkedin {
+    background-color: darkblue;
+}
+
+.login-to-signup {
+    margin-top: 20px;
+    color: rgb(0, 0, 0, 75%);
+    text-align: center;
+}
