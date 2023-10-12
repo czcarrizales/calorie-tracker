@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import './Overview.css'
 import { useSelector } from 'react-redux';
 
-const Overview = () => {
+const Overview = ({ showModal, setShowModal }) => {
 
     const user = useSelector((state: any) => state.user)
 
@@ -15,11 +15,15 @@ const Overview = () => {
         pathColor: '#2BBC66'
     });
 
+    const handleShowModal = () => {
+        setShowModal(!showModal)
+    }
+
     return (
         <div className='overview-main-container'>
             <CircularProgressbarWithChildren className='app-calorie-container' value={(user.currentCalories / user.maxCalories) * 100} strokeWidth={4} styles={styles}>
-                    <h1>Calories</h1>
-                    <h2>{user.currentCalories}</h2>
+                <h1>Calories</h1>
+                <h2>{user.currentCalories}</h2>
 
             </CircularProgressbarWithChildren>
             <div className='app-overview-details-container'>
@@ -41,7 +45,11 @@ const Overview = () => {
                 </div>
             </div>
             <div className='overview-food-log-container'>
-                <h3>Food Log</h3>
+                <div className='overview-food-log-title'>
+                    <h3>Food Log</h3>
+                    <button className='overview-food-log-add' onClick={handleShowModal}>+ Add New Food</button>
+                </div>
+
                 {
                     user.foodLog.map((food: any) => {
                         return (
