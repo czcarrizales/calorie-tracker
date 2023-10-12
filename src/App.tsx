@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Analytics from './Analytics'
 import Modal from './Modal'
 import Login from './Login'
+import SignUp from './SignUp'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route path='/' element={<Overview />} />
       <Route path='/analytics' element={<Analytics />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
     </Routes>
     <div className="circle-button" onClick={() => setShowModal(true)}>add</div>
     </div>
