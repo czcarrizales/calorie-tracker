@@ -18,12 +18,12 @@ function App() {
     <div className='app-main-container'>
       {showModal && <Modal setShowModal={setShowModal} />}
     <Routes>
-      <Route path='/' element={<Overview />} />
+      <Route path='/' element={<Overview showModal={showModal} setShowModal={setShowModal} />} />
       <Route path='/analytics' element={<Analytics />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
     </Routes>
-    <div className="circle-button" onClick={() => setShowModal(true)}>add</div>
+    {/* <div className="circle-button" onClick={() => setShowModal(true)}>add</div> */}
     </div>
     </>
   )
