@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Modal.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToFoodLog, updateCurrentCalories, updateCurrentCarbs, updateCurrentFat, updateCurrentProtein, updateCurrentWeight } from './slices/userSlice'
+import { addToFoodLog, editFoodDetails, updateCurrentCalories, updateCurrentCarbs, updateCurrentFat, updateCurrentProtein, updateCurrentWeight } from './slices/userSlice'
 import { addFoodToFoodLog, editCurrentWeight, setShowModal } from './slices/appSlice'
+import {v4 as uuidv4} from 'uuid'
 
 const Modal = () => {
 
@@ -13,6 +14,7 @@ const Modal = () => {
     const [foodFat, setFoodFat] = useState(0)
     const [foodCarbs, setFoodCarbs] = useState(0)
     const [weight, setWeight] = useState('')
+    const [foodNameEdit, setFoodNameEdit] = useState()
     const app = useSelector((state: any) => state.app)
     const user = useSelector((state: any) => state.user)
 
@@ -30,6 +32,7 @@ const Modal = () => {
         dispatch(updateCurrentCarbs(foodCarbs))
         dispatch(updateCurrentFat(foodFat))
         dispatch(addToFoodLog({
+            id: uuidv4(),
             name: foodName,
             calories: foodCalories,
             protein: foodProtein,
@@ -45,6 +48,27 @@ const Modal = () => {
         dispatch(setShowModal(false))
         dispatch(editCurrentWeight(false))
     }
+
+    const handleUpdateFood = (e: any) => {
+        e.preventDefault()
+        const updatedFoodDetails = {
+            name: foodName
+        }
+        dispatch(editFoodDetails(updatedFoodDetails))
+        dispatch(setShowModal(false))
+        console.log(user.foodLog)
+    }
+
+    useEffect(() => {
+      if (app.editingFoodDetails) {
+        const foodDetails = user.foodLog.find(food => food.id === user.editFoodId)
+        setFoodName(foodDetails.name)
+        console.log(foodDetails.name)
+        console.log(user.editFoodId)
+        console.log('we are editing!')
+      }
+    }, [app.editingFoodDetails])
+    
 
     return (
         <div className='modal-container'>
@@ -104,6 +128,23 @@ const Modal = () => {
                             <button className='add-food-button' type='submit'>Add Food</button>
                             <button className='cancel-food-button' onClick={handleCancelButton}>Cancel</button>
                         </form>
+                    </>
+                }
+                {
+                    app.editingFoodDetails
+                    &&
+                    <>
+                    <h2>Edit Food Details</h2>
+                    <form onSubmit={handleUpdateFood}>
+                    <div className="nutrition-info-details">
+                                    <label>
+                                        Name
+                                    </label>
+                                    <input className='nutrition-info-input' type="text" placeholder='12g' value={foodName} onChange={(e) => setFoodName(e.target.value)} />
+                                </div>
+                    <button className='add-food-button' type='submit'>Update Food</button>
+                            <button className='cancel-food-button' onClick={handleCancelButton}>Cancel</button>
+                    </form>
                     </>
                 }
             </div>
