@@ -40,11 +40,14 @@ const userSlice = createSlice({
         updateCurrentProtein: (state, action) => {
             state.currentProtein += action.payload
         },
+        updateCurrentWeight: (state, action) => {
+            state.currentWeight = action.payload
+        },
         addToFoodLog: (state, action) => {
             state.foodLog.push(action.payload)
         }
     }
 })
 
-export const { updateCurrentCalories, updateCurrentProtein, updateCurrentCarbs, updateCurrentFat, addToFoodLog } = userSlice.actions;
+export const { updateCurrentCalories, updateCurrentProtein, updateCurrentCarbs, updateCurrentFat, updateCurrentWeight, addToFoodLog } = userSlice.actions;
 export default userSlice.reducer;
