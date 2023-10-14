@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialFoodLog: {
+    id: any;
     name: string;
     calories: number;
     protein: number;
@@ -24,8 +25,8 @@ const userSlice = createSlice({
         currentProtein: initalProtein,
         currentFat: initalFat,
         currentCarbs: initalCarbs,
-        foodLog: initialFoodLog
-            
+        foodLog: initialFoodLog,
+        editFoodId: null
     },
     reducers: {
         updateCurrentCalories: (state, action) => {
@@ -45,9 +46,21 @@ const userSlice = createSlice({
         },
         addToFoodLog: (state, action) => {
             state.foodLog.push(action.payload)
+        },
+        setEditFoodId: (state, action) => {
+            state.editFoodId = action.payload
+        },
+        editFoodDetails: (state, action) => {
+            const updatedFoodLog = state.foodLog.map((food) => {
+                if (food.id === state.editFoodId) {
+                    return {...food, ...action.payload}
+                }
+                return food
+            })
+            state.foodLog = updatedFoodLog
         }
     }
 })
 
-export const { updateCurrentCalories, updateCurrentProtein, updateCurrentCarbs, updateCurrentFat, updateCurrentWeight, addToFoodLog } = userSlice.actions;
+export const { updateCurrentCalories, updateCurrentProtein, updateCurrentCarbs, updateCurrentFat, updateCurrentWeight, addToFoodLog, setEditFoodId, editFoodDetails } = userSlice.actions;
 export default userSlice.reducer;
