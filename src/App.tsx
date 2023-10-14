@@ -7,18 +7,19 @@ import Analytics from './Analytics'
 import Modal from './Modal'
 import Login from './Login'
 import SignUp from './SignUp'
+import { useSelector } from 'react-redux'
 
 function App() {
 
-  const [showModal, setShowModal] = useState(false)
+  const app = useSelector((state: any) => state.app)
 
   return (
     <>
     <Navbar />
     <div className='app-main-container'>
-      {showModal && <Modal setShowModal={setShowModal} />}
+      {app.showModal && <Modal />}
     <Routes>
-      <Route path='/' element={<Overview showModal={showModal} setShowModal={setShowModal} />} />
+      <Route path='/' element={<Overview />} />
       <Route path='/analytics' element={<Analytics />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
